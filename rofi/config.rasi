@@ -1,0 +1,94 @@
+* {
+    font: "Rubik Medium 10.5";
+    bg: rgba(0,0,0,1.0);
+    fg: rgba(255,255,255,1.0);
+    sel: #1a1a1a;
+
+}
+
+configuration {
+    show-icons: true;
+	drun-display-format: "{name}  [<span weight='Medium' color='grey' size='small'>{generic}</span>]";
+}
+
+window {
+    background-color: @bg;
+    border: none;
+    location: center;
+    width: 500px;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+inputbar {
+    font: "Rubik 20.5";
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    padding: 10px;
+    spacing: 10px;
+    children: [ icon-search, entry ];
+}
+
+icon-search {
+    expand: false;
+    filename: "search";
+    size: 32px;
+    color: @fg;
+}
+
+icon-search, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font: inherit;
+    color: @fg;
+    placeholder: "Search";
+    placeholder-color: grey;
+
+}
+textbox {
+    padding: 0px 10px;
+}
+
+listview {
+    lines: 6;
+    columns: 1;
+    scrollbar:  false;
+    fixed-height: true;
+    border: none;
+}
+
+
+element {
+    enabled: true;
+    padding: 6px 10px;
+    spacing: 0;
+    background: transparent;
+    color: @fg;
+    border-radius: 5px;
+}
+element-icon {
+    background: transparent;
+    text-color: inherit;
+    size: 32px;
+    cursor: inherit;
+}
+element-text {
+    background: transparent;
+    text-color: inherit;
+    padding: 0px 10px;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+element selected.normal {
+    background-color: @sel;
+    text-color: @fg;
+}
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}

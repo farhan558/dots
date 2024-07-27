@@ -1,0 +1,130 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 5px;
+    font-family: "Rubik", "monospace";
+    font-weight: 500;
+}
+
+window#waybar {
+    background: @background;
+    color: @text;
+    border-radius: 5px;
+}
+
+tooltip {
+    background: @base;
+    border-radius: 10px;
+}
+tooltip label {
+    color: @text;
+}
+
+#window {
+    background: transparent;
+    color: @text;
+    margin-left: 5px;
+}
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#submap {
+    color: @sky;
+}
+
+#workspaces {
+    padding: 0px 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: @opacity;
+}
+#workspaces button {
+    padding: 0px 7px;
+    color: @surface;
+    border-radius: 999px;
+}
+#workspaces button.active {
+    background-image: linear-gradient(to right, @blue, @yellow);
+}
+#workspaces button.active label {
+    color: @base;
+}
+
+#window,
+#mpris,
+#clock,
+#tray,
+#submap,
+#custom-pacman,
+#custom-dunst,
+#upower {
+    padding: 0px 5px;
+    margin: 5px 5px 5px 0px;
+}
+#mpris,
+#clock,
+#tray {
+    background: @opacity;
+    padding: 0px 8px;
+}
+
+#custom-icon {
+    color: @sky;
+    font-size: 16pt;
+    margin-right: 8px;
+}
+#idle_inhibitor {
+    color: @yellow;
+    font-size: 16pt;
+    margin-right: 15px;
+    margin-left: 10px;
+}
+#idle_inhibitor:hover {
+    color: @orange;
+}
+#tray {
+    margin: 5px 0px 5px 0px;
+}
+
+#mpris.paused {
+    background: @opacity;
+}
+#mpris.playing {
+    background-image: linear-gradient(to right, @blue, @teal);
+    color: @base;
+}
+
+#upower {
+    color: @green;
+}
+#upower:hover {
+    background: @green;
+    color: @base;
+}
+#upower.charging {
+    background: @green;
+    color: @base;
+}
+
+#clock {
+    color: @text;
+}
+#clock:hover {
+    background: @surface;
+    color: @base;
+}
+
+#custom-pacman {
+    color: @sky;
+}
+#custom-pacman:hover {
+    background: @sky;
+    color: @base;
+}
+
+
+

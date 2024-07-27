@@ -1,0 +1,115 @@
+{
+  "layer": "top",
+  "position": "top",
+
+  // Module Position
+  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+  "modules-center": ["clock"],
+  "modules-right": ["mpris", "custom/pacman", "upower", "group/otray"],
+
+  "width": 1100,
+  "height": 30,
+
+  // Margin
+  "margin-top": 5,
+  "margin-bottom": 0,
+  "margin-left": 5,
+  "margin-right": 5,
+
+  "reload_style_on_change": true,
+
+  // Hyprland
+  "hyprland/submap": {
+    "format": "{}",
+    "max-length": 8,
+    "tooltip": false,
+  },
+
+  "hyprland/workspaces": {
+    "format": "<span size='x-large'></span>",
+    "format-icons": {
+      "1": "a",
+      "2": "b",
+      "3": "c",
+      "4": "d",
+      "5": "e",
+    },
+    "persistent-workspaces": {
+      "*": 5,
+    },
+  },
+
+  "hyprland/window": {
+    "format": " {initialTitle} ",
+    "rewrite": {
+      "Mozilla Firefox": "󰈹  Firefox",
+      "Code - OSS": "Code",
+    },
+    "separate-outputs": true,
+  },
+
+  // Built-in Modules
+  "clock": {
+    "format": "{:%a, %d-%b   %I:%M %p}",
+    "on-click": "gnome-calendar",
+  },
+
+  "upower": {
+    "icon-size": 13,
+    "hide-if-empty": true,
+    "tooltip": true,
+    "tooltip-spacing": 20,
+  },
+
+  "group/otray": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+    "modules": ["custom/icon", "tray", "idle_inhibitor"],
+  },
+  "custom/icon": {
+    "format": "",
+    "tooltip": false,
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 7,
+    "reverse-direction": true,
+  },
+
+  "mpris": {
+    "player": "spotify",
+    "format": "<span size='x-large' rise='-2pt'>{player_icon}</span> {title}",
+    "format-paused": "<span size='x-large' rise='-2pt' color=\"#94e2d5\">{player_icon}</span> {title}",
+    "player-icons": {
+      "default": "󰎇",
+    },
+    "status-icons": {
+      "paused": "󰎇",
+    },
+    "max-length": 20,
+    "tooltip-format": "{artist}",
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+  },
+
+  // Custom Modules
+  "custom/pacman": {
+    "format": "󰊠  {}",
+    "interval": 3600,
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
+    "on-click": "kitty -o remember_window_size=no -o initial_window_width=82c -o initial_window_height=24c --class update yay; pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "tooltip": false,
+  },
+}
